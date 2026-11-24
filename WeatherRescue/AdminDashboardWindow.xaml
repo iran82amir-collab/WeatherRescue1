@@ -1,0 +1,172 @@
+﻿<Window x:Class="WeatherRescue.AdminDashboardWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="WeatherRescue - Admin Panel"
+        Height="760" Width="1250"
+        WindowStartupLocation="CenterScreen"
+        Background="#F1F4F8">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="245"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Sidebar -->
+        <Border Grid.Column="0" Background="#172B45">
+            <DockPanel>
+                <StackPanel DockPanel.Dock="Top" Margin="22,28">
+                    <TextBlock Text="WEATHER RESCUE"
+                               Foreground="White"
+                               FontSize="19"
+                               FontWeight="Bold"/>
+                    <TextBlock Text="ADMINISTRATION"
+                               Foreground="#83A7CE"
+                               FontSize="11"
+                               Margin="0,6,0,30"/>
+
+                    <TextBlock Text="MAIN MENU"
+                               Foreground="#8295AA"
+                               FontSize="11"
+                               Margin="0,0,0,12"/>
+
+                    <Button Content="Dashboard"
+                            Height="42" Margin="0,3"
+                            Background="#29496D"
+                            Foreground="White"
+                            BorderThickness="0"/>
+
+                    <Button Content="User Management"
+                            Height="42" Margin="0,3"
+                            Background="Transparent"
+                            Foreground="#D5DFEA"
+                            BorderThickness="0"/>
+
+                    <Button Content="Weather Alerts"
+                            Height="42" Margin="0,3"
+                            Background="Transparent"
+                            Foreground="#D5DFEA"
+                            BorderThickness="0"/>
+
+                    <Button Content="Help Requests"
+                            Height="42" Margin="0,3"
+                            Background="Transparent"
+                            Foreground="#D5DFEA"
+                            BorderThickness="0"/>
+
+                    <Button Content="Rescue Teams"
+                            Height="42" Margin="0,3"
+                            Background="Transparent"
+                            Foreground="#D5DFEA"
+                            BorderThickness="0"/>
+
+                    <Button Content="Assignments"
+                            Height="42" Margin="0,3"
+                            Background="Transparent"
+                            Foreground="#D5DFEA"
+                            BorderThickness="0"/>
+                </StackPanel>
+
+                <Button Content="LOG OUT"
+                        DockPanel.Dock="Bottom"
+                        Height="44"
+                        Margin="20"
+                        Background="#A83E45"
+                        Foreground="White"
+                        BorderThickness="0"
+                        Click="Logout_Click"/>
+            </DockPanel>
+        </Border>
+
+        <!-- Main Content -->
+        <Grid Grid.Column="1" Margin="30">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <!-- Header -->
+            <Grid Grid.Row="0" Margin="0,0,0,28">
+                <StackPanel>
+                    <TextBlock Text="Administration Dashboard"
+                               FontSize="27"
+                               FontWeight="Bold"
+                               Foreground="#172B45"/>
+                    <TextBlock x:Name="AdminWelcomeText"
+                               Text="System Overview"
+                               FontSize="13"
+                               Foreground="#78899C"
+                               Margin="0,7,0,0"/>
+                </StackPanel>
+            </Grid>
+
+            <!-- Statistics -->
+            <UniformGrid Grid.Row="1" Columns="3" Margin="0,0,0,25">
+
+                <Border Background="White" CornerRadius="8"
+                        Padding="20" Margin="0,0,12,0">
+                    <StackPanel>
+                        <TextBlock Text="TOTAL USERS"
+                                   Foreground="#78899C"
+                                   FontSize="11"/>
+                        <TextBlock Text="0"
+                                   FontSize="30"
+                                   FontWeight="Bold"
+                                   Foreground="#244D79"
+                                   Margin="0,8,0,0"/>
+                    </StackPanel>
+                </Border>
+
+                <Border Background="White" CornerRadius="8"
+                        Padding="20" Margin="6,0">
+                    <StackPanel>
+                        <TextBlock Text="PENDING REQUESTS"
+                                   Foreground="#78899C"
+                                   FontSize="11"/>
+                        <TextBlock Text="0"
+                                   FontSize="30"
+                                   FontWeight="Bold"
+                                   Foreground="#D18B35"
+                                   Margin="0,8,0,0"/>
+                    </StackPanel>
+                </Border>
+
+                <Border Background="White" CornerRadius="8"
+                        Padding="20" Margin="12,0,0,0">
+                    <StackPanel>
+                        <TextBlock Text="ACTIVE ALERTS"
+                                   Foreground="#78899C"
+                                   FontSize="11"/>
+                        <TextBlock Text="0"
+                                   FontSize="30"
+                                   FontWeight="Bold"
+                                   Foreground="#B94C50"
+                                   Margin="0,8,0,0"/>
+                    </StackPanel>
+                </Border>
+
+            </UniformGrid>
+
+            <!-- Welcome Panel -->
+            <Border Grid.Row="2"
+                    Background="White"
+                    CornerRadius="8"
+                    Padding="25">
+                <StackPanel>
+                    <TextBlock Text="Welcome to Administration Center"
+                               FontSize="21"
+                               FontWeight="Bold"
+                               Foreground="#172B45"/>
+
+                    <TextBlock Text="Manage users, weather alerts, emergency requests and rescue teams from one central location."
+                               TextWrapping="Wrap"
+                               FontSize="14"
+                               Foreground="#78899C"
+                               Margin="0,12,0,0"/>
+                </StackPanel>
+            </Border>
+
+        </Grid>
+    </Grid>
+</Window>
